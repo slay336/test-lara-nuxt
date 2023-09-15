@@ -9,11 +9,6 @@ const props = defineProps<{
   items: Array<ICarouselItem>,
 }>();
 
-const items = props.items.map((item) => {
-  item.isActive = false;
-  return item;
-});
-
 </script>
 
 <template>
@@ -23,8 +18,8 @@ const items = props.items.map((item) => {
       <Carousel
         class="z-10"
         :items-to-show="1"
-        autoplay="4000"
-        transition="500"
+        :autoplay="4000"
+        :transition="500"
         :wrap-around="true"
       >
         <Slide
