@@ -1,3 +1,3 @@
-import HeaderSection from "./HeaderSection.vue";
+import HeaderSection from "./HeaderSectionVue.vue";
 
 export default HeaderSection;
