@@ -1,5 +1,38 @@
 <script setup lang="ts">
-import Icon from "~/components/Icon";
+import HeaderSection from "~/components/HeaderSection";
+import SliderSection from "~/components/SliderSection";
+
+import { ICarouselItem } from "~/stores/carousel/types";
+
+const carouselItems: Ref<Array<ICarouselItem>> = ref([
+  {
+    id: 1,
+    title: "We Provide\nWelding Services",
+    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio omnis fugit, sed tempora praesentium commodi error, hic recusandae repudiandae neque ad molestias, atque veritatis labore quae eveniet autem in",
+    button: {
+      caption: "Contact Us",
+      href: "#",
+    }
+  },
+  {
+    id: 2,
+    title: "We Provide\nWelding Services",
+    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio omnis fugit, sed tempora praesentium commodi error, hic recusandae repudiandae neque ad molestias, atque veritatis labore quae eveniet autem in",
+    button: {
+      caption: "Contact Us",
+      href: "#",
+    }
+  },
+  {
+    id: 3,
+    title: "We Provide\nWelding Services",
+    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio omnis fugit, sed tempora praesentium commodi error, hic recusandae repudiandae neque ad molestias, atque veritatis labore quae eveniet autem in",
+    button: {
+      caption: "Contact Us",
+      href: "#",
+    }
+  }
+]);
 
 </script>
 
@@ -17,88 +50,7 @@ import Icon from "~/components/Icon";
       <HeaderSection />
       <!-- end header section -->
       <!-- slider section -->
-      <section class="slider_section ">
-        <div id="customCarousel1" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="container ">
-                <div class="row">
-                  <div class="col-lg-10 col-md-11 mx-auto">
-                    <div class="detail-box">
-                      <h1>
-                        We Provide <br>
-                        Welding Services
-                      </h1>
-                      <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio omnis fugit, sed tempora praesentium commodi error, hic recusandae repudiandae neque ad molestias, atque veritatis labore quae eveniet autem in
-                      </p>
-                      <div class="btn-box">
-                        <a href="" class="btn1">
-                          Contact Us
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="container ">
-                <div class="row">
-                  <div class="col-lg-10 col-md-11 mx-auto">
-                    <div class="detail-box">
-                      <h1>
-                        We Provide <br>
-                        Welding Services
-                      </h1>
-                      <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio omnis fugit, sed tempora praesentium commodi error, hic recusandae repudiandae neque ad molestias, atque veritatis labore quae eveniet autem in
-                      </p>
-                      <div class="btn-box">
-                        <a href="" class="btn1">
-                          Contact Us
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="container ">
-                <div class="row">
-                  <div class="col-lg-10 col-md-11 mx-auto">
-                    <div class="detail-box">
-                      <h1>
-                        We Provide <br>
-                        Welding Services
-                      </h1>
-                      <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio omnis fugit, sed tempora praesentium commodi error, hic recusandae repudiandae neque ad molestias, atque veritatis labore quae eveniet autem in
-                      </p>
-                      <div class="btn-box">
-                        <a href="" class="btn1">
-                          Contact Us
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel_btn-box">
-            <a class="carousel-control-prev" href="#customCarousel1" role="button" data-slide="prev">
-              <!-- <font-awesome-icon icon="fa fa-arrow-left" /> -->
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#customCarousel1" role="button" data-slide="next">
-              <!-- <font-awesome-icon icon="fa fa-arrow-right" /> -->
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-        </div>
-      </section>
+      <SliderSection :items="carouselItems" />
       <!-- end slider section -->
     </div>
 

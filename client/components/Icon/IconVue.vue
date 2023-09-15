@@ -3,22 +3,30 @@
 const props = withDefaults(
   defineProps<{
     icon: string,
+    color?: string,
     withBackground?: boolean,
   }>(),
   {
     withBackground: true,
+    color: "white",
   }
 );
+
+const classes: Ref<Array<string>> = ref([
+  "w-[28px]",
+  "h-[28px]",
+  "flex", 
+  "justify-center",
+  "items-center",
+  "rounded-full",
+  `text-${props.color}`,
+  props.withBackground ? "bg-sky-400" : "",
+]);
 
 </script>
 
 <template>
-  <div
-    class="w-[28px] h-[28px] flex justify-center items-center text-white rounded-full"
-    :class="{
-      'bg-sky-400': withBackground,
-    }"
-  >
+  <div :class="classes">
     <ClientOnly>
       <font-awesome-icon :icon="icon" />
     </ClientOnly>
