@@ -22,7 +22,10 @@ const props = defineProps<{
             <p class="mt-0 mb-[1rem]">
               {{ props.item.content }}
             </p>
-            <div class="flex justify-center mt-[20px] flex-wrap">
+            <div
+              v-if="!!props.item.button"
+              class="flex justify-center mt-[20px] flex-wrap"
+            >
               <a
                 :href="props.item.button.href"
                 class="inline-block py-[10px] px-[15px] bg-teal-800 hover:bg-transparent hover:!text-teal-800 text-white rounded-none transition-all duration-300 border-[1px] border-teal-600 text-center w-[165px] no-underline"

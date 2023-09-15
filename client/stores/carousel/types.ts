@@ -1,4 +1,5 @@
 export type ICarouselItem = {
+  id: number,
   title: string,
   content: string,
   button?: {
