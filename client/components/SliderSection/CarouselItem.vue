@@ -16,7 +16,7 @@ const props = defineProps<{
       <div class="flex flex-wrap items-center -mx-[15px]">
         <div class="mx-auto min-[992px]:flex-[0_0_83.3%] min-[992px]:max-w-[83.3%] min-[768px]:flex-[0_0_91.7%] min-[768px]:max-w-[91.7%] relative w-full px-[15px]">
           <div class="text-white text-center">
-            <h1 class="font-semibold mb-[15px] text-white text-[2.5rem] leading-[1.2] mt-0">
+            <h1 class="font-semibold mb-[15px] text-white text-[2.5rem] leading-[1.2] mt-0 whitespace-pre-wrap">
               {{ props.item.title }}
             </h1>
             <p class="mt-0 mb-[1rem]">

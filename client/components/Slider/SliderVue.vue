@@ -4,22 +4,42 @@ const props = withDefaults(
   defineProps<{
     withNavigation?: boolean,
     withPagination?: boolean,
-    activeColor?: string,
-    inactiveColor?: string,
-    hoverColor?: string,
+    activePBColor?: string,
+    inactivePBColor?: string,
+    hoverPBColor?: string,
+    paginationButtonShape?: "default" | "circle",
+    increaseActiveCardSize?: boolean,
   }>(),
   {
     withNavigation: true,
     withPagination: true,
-    activeColor: "white",
-    inactiveColor: "gray",
-    hoverColor: "#0D9488"
+    activePBColor: "white",
+    inactivePBColor: "gray",
+    hoverPBColor: "#0D9488",
+    paginationButtonShape: "default",
+    increaseActiveCardSize: false,
   }
 );
 
 const container: Ref<HTMLDivElement> = ref({} as HTMLDivElement);
 
-const { activeColor, inactiveColor, hoverColor } = toRefs(props);
+const {
+  activePBColor,
+  inactivePBColor,
+  hoverPBColor,
+  increaseActiveCardSize,
+} = toRefs(props);
+
+const PBShape = computed(() => {
+  return {
+    radius: props.paginationButtonShape == "default" ? "0" : "100%",
+    height: props.paginationButtonShape == "default" ? "4px": "12px",
+  };
+});
+
+const inactiveSize = computed(() => {
+  return increaseActiveCardSize.value ? "scale(0.87)" : "scale(1)";
+});
 
 
 onMounted(() => {
@@ -56,16 +76,29 @@ onMounted(() => {
 
 <style lang="scss">
 .carousel__pagination-button:after {
-  background-color: v-bind("activeColor");
+  background-color: v-bind("inactivePBColor");
+  border-radius: v-bind("PBShape.radius");
+  height: v-bind("PBShape.height");
 }
 
 .carousel__pagination-button:hover {
   &:after {
-    background-color: v-bind("hoverColor");
+    background-color: v-bind("hoverPBColor");
   }
 }
 
 .carousel__pagination-button--active:after {
-  background-color: v-bind("inactiveColor");
+  background-color: v-bind("activePBColor");
+  border-radius: v-bind("PBShape.radius");
+}
+
+.carousel__slide {
+  transform: v-bind("inactiveSize");
+  transition: all;
+  transition-duration: .3s;
+}
+
+.carousel__slide--active {
+  transform: scale(1);
 }
 </style>

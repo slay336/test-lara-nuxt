@@ -7,3 +7,10 @@ export type ICarouselItem = {
     href: string,
   },
 };
+
+export type IServiceCarouselItem = {
+  id: number,
+  image: string,
+  title: string,
+  description: string,
+};
