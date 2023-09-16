@@ -6,19 +6,19 @@ import { IClientComment } from "~/stores/client_comment/types";
 const comments: Ref<Array<IClientComment>> = ref([
   {
     id: 1,
-    image: "images/client.jpg",
+    image: "/images/client.jpg",
     name: "Jone Mark",
     comment: "Editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by",
   },
   {
     id: 2,
-    image: "images/client.jpg",
+    image: "/images/client.jpg",
     name: "Jone Mark",
     comment: "Editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by",
   },
   {
     id: 3,
-    image: "images/client.jpg",
+    image: "/images/client.jpg",
     name: "Jone Mark",
     comment: "Editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by",
   },

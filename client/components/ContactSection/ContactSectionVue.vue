@@ -10,7 +10,7 @@ import Input from "~/components/Input";
         <div class="px-0 min-[768px]:flex-[0_0_50%] min-[768px]:max-w-[50%] relative w-full">
           <div class="overflow-hidden">
             <img
-              src="images/contact-img.jpg"
+              src="/images/contact-img.jpg"
               class="min-w-full align-middle border-none"
               alt="about img">
           </div>

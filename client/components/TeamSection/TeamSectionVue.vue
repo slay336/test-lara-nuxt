@@ -6,7 +6,7 @@ import { ITeamMember } from "~/stores/team_member/types";
 const members: Ref<Array<ITeamMember>> = ref([
   {
     id: 1,
-    image: "images/t1.jpg",
+    image: "/images/t1.jpg",
     name: "Martin Anderson",
     occupation: {
       id: 1,
@@ -15,7 +15,7 @@ const members: Ref<Array<ITeamMember>> = ref([
   },
   {
     id: 2,
-    image: "images/t2.jpg",
+    image: "/images/t2.jpg",
     name: "Denny Butler",
     occupation: {
       id: 1,
@@ -24,7 +24,7 @@ const members: Ref<Array<ITeamMember>> = ref([
   },
   {
     id: 3,
-    image: "images/t3.jpg",
+    image: "/images/t3.jpg",
     name: "Nathan Mcpherson",
     occupation: {
       id: 1,

@@ -26,7 +26,7 @@
       <div class="px-0 min-[768px]:flex-[0_0_50%] max-w-[50%] relative w-full">
         <div class="relative overflow-hidden h-full">
           <img
-            src="images/about-img.jpg"
+            src="/images/about-img.jpg"
             class="w-full align-middle border-none"
             alt="about img"
           >
