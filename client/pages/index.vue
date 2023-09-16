@@ -1,104 +1,21 @@
 <script setup lang="ts">
-import HeaderSection from "~/components/HeaderSection";
-import SliderSection from "~/components/SliderSection";
+import HeroArea from "~/components/HeroArea";
 import ServiceSection from "~/components/ServiceSection";
 import AboutSection from "~/components/AboutSection";
 import TeamSection from "~/components/TeamSection";
 import ContactSection from "~/components/ContactSection";
-
-import { ICarouselItem, IServiceCarouselItem } from "~/stores/carousel/types";
-
-const carouselItems: Ref<Array<ICarouselItem>> = ref([
-  {
-    id: 1,
-    title: "We Provide\nWelding Services",
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio omnis fugit, sed tempora praesentium commodi error, hic recusandae repudiandae neque ad molestias, atque veritatis labore quae eveniet autem in",
-    button: {
-      caption: "Contact Us",
-      href: "#",
-    }
-  },
-  {
-    id: 2,
-    title: "We Provide\nWelding Services",
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio omnis fugit, sed tempora praesentium commodi error, hic recusandae repudiandae neque ad molestias, atque veritatis labore quae eveniet autem in",
-    button: {
-      caption: "Contact Us",
-      href: "#",
-    }
-  },
-  {
-    id: 3,
-    title: "We Provide\nWelding Services",
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio omnis fugit, sed tempora praesentium commodi error, hic recusandae repudiandae neque ad molestias, atque veritatis labore quae eveniet autem in",
-    button: {
-      caption: "Contact Us",
-      href: "#",
-    }
-  }
-]);
-
-const serviceCarouselItems: Ref<Array<IServiceCarouselItem>> = ref([
-  {
-    id: 1,
-    image: "images/s1.png",
-    title: "Home Welding",
-    description: "when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal",
-  },
-  {
-    id: 2,
-    image: "images/s4.png",
-    title: "Machine Welding",
-    description: "when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal",
-  },
-  {
-    id: 3,
-    image: "images/s6.png",
-    title: "Car Welding",
-    description: "when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal",
-  },
-  {
-    id: 4,
-    image: "images/s1.png",
-    title: "Home Welding",
-    description: "when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal",
-  },
-  {
-    id: 5,
-    image: "images/s4.png",
-    title: "Machine Welding",
-    description: "when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal",
-  },
-  {
-    id: 6,
-    image: "images/s6.png",
-    title: "Car Welding",
-    description: "when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal",
-  },
-])
+import ClientSection from "~/components/ClientSection";
 
 </script>
 
 <template>
   <div>
-    <div class="relative min-h-[100vh] flex flex-col before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full">
-      <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-1 before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-gradient-to-r before:from-black/90 before:to-black/70">
-        <img
-          class="w-auto h-auto min-w-full min-h-full"
-          src="images/hero-bg.jpg"
-          alt=""
-        />
-      </div>
-      <!-- header section strats -->
-      <HeaderSection />
-      <!-- end header section -->
-      <!-- slider section -->
-      <SliderSection :items="carouselItems" />
-      <!-- end slider section -->
-    </div>
+    <!-- hero area -->
+    <HeroArea />
+    <!-- hero area ends -->
     
     <!-- service section -->
-    <ServiceSection :items="serviceCarouselItems" />
+    <ServiceSection />
     <!-- service section ends -->
 
     <!-- about section -->
@@ -114,102 +31,7 @@ const serviceCarouselItems: Ref<Array<IServiceCarouselItem>> = ref([
     <!-- end contact section -->
 
     <!-- client section -->
-
-    <section class="client_section layout_padding">
-      <div class="container ">
-        <div class="heading_container heading_center">
-          <h2>
-            Testimonial
-          </h2>
-          <hr>
-        </div>
-        <div id="carouselExample2Controls" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="row">
-                <div class="col-lg-7 col-md-9 mx-auto">
-                  <div class="client_container ">
-                    <div class="img-box">
-                      <img src="images/client.jpg" alt="">
-                    </div>
-                    <div class="detail-box">
-                      <h5>
-                        Jone Mark
-                      </h5>
-                      <p>
-                        Editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by
-                      </p>
-                      <span>
-                        <!-- <font-awesome-icon icon="fa fa-quote-left" /> -->
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="row">
-                <div class="col-lg-7 col-md-9 mx-auto">
-                  <div class="client_container ">
-                    <div class="img-box">
-                      <img src="images/client.jpg" alt="">
-                    </div>
-                    <div class="detail-box">
-                      <h5>
-                        Jone Mark
-                      </h5>
-                      <p>
-                        Editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by
-                      </p>
-                      <span>
-                        <!-- <font-awesome-icon icon="fa fa-quote-left" /> -->
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="row">
-                <div class="col-lg-7 col-md-9 mx-auto">
-                  <div class="client_container ">
-                    <div class="img-box">
-                      <img src="images/client.jpg" alt="">
-                    </div>
-                    <div class="detail-box">
-                      <h5>
-                        Jone Mark
-                      </h5>
-                      <p>
-                        Editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by
-                      </p>
-                      <span>
-                        <!-- <font-awesome-icon icon="fa fa-quote-left" /> -->
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel_btn-box">
-            <a class="carousel-control-prev" href="#carouselExample2Controls" role="button" data-slide="prev">
-              <span>
-                <!-- <font-awesome-icon icon="fa fa-arrow-left" /> -->
-              </span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExample2Controls" role="button" data-slide="next">
-              <span>
-                <!-- <font-awesome-icon icon="fa fa-arrow-right" /> -->
-              </span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    <ClientSection />
     <!-- end client section -->
 
     <!-- info section -->

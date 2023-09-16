@@ -3,9 +3,44 @@ import ServiceCard from "./ServiceCard.vue";
 
 import { IServiceCarouselItem } from "~/stores/carousel/types";
 
-const props = defineProps<{
-  items: Array<IServiceCarouselItem>,
-}>();
+const items: Ref<Array<IServiceCarouselItem>> = ref([
+  {
+    id: 1,
+    image: "images/s1.png",
+    title: "Home Welding",
+    description: "when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal",
+  },
+  {
+    id: 2,
+    image: "images/s4.png",
+    title: "Machine Welding",
+    description: "when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal",
+  },
+  {
+    id: 3,
+    image: "images/s6.png",
+    title: "Car Welding",
+    description: "when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal",
+  },
+  {
+    id: 4,
+    image: "images/s1.png",
+    title: "Home Welding",
+    description: "when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal",
+  },
+  {
+    id: 5,
+    image: "images/s4.png",
+    title: "Machine Welding",
+    description: "when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal",
+  },
+  {
+    id: 6,
+    image: "images/s6.png",
+    title: "Car Welding",
+    description: "when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal",
+  },
+]);
 
 </script>
 

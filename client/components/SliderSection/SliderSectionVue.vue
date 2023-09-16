@@ -4,9 +4,35 @@ import Slider from "~/components/Slider";
 
 import { ICarouselItem } from "stores/carousel/types";
 
-const props = defineProps<{
-  items: Array<ICarouselItem>,
-}>();
+const items: Ref<Array<ICarouselItem>> = ref([
+  {
+    id: 1,
+    title: "We Provide\nWelding Services",
+    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio omnis fugit, sed tempora praesentium commodi error, hic recusandae repudiandae neque ad molestias, atque veritatis labore quae eveniet autem in",
+    button: {
+      caption: "Contact Us",
+      href: "#",
+    }
+  },
+  {
+    id: 2,
+    title: "We Provide\nWelding Services",
+    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio omnis fugit, sed tempora praesentium commodi error, hic recusandae repudiandae neque ad molestias, atque veritatis labore quae eveniet autem in",
+    button: {
+      caption: "Contact Us",
+      href: "#",
+    }
+  },
+  {
+    id: 3,
+    title: "We Provide\nWelding Services",
+    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio omnis fugit, sed tempora praesentium commodi error, hic recusandae repudiandae neque ad molestias, atque veritatis labore quae eveniet autem in",
+    button: {
+      caption: "Contact Us",
+      href: "#",
+    }
+  }
+]);
 
 </script>
 
@@ -22,7 +48,7 @@ const props = defineProps<{
         :wrap-around="true"
       >
         <Slide
-          v-for="item in props.items"
+          v-for="item in items"
           :key="item.id"
         >
           <CarouselItem :item="item" />

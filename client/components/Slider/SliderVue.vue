@@ -4,6 +4,10 @@ const props = withDefaults(
   defineProps<{
     withNavigation?: boolean,
     withPagination?: boolean,
+    arrowButtonColor?: string,
+    arrowButtonBorderColor?: string,
+    arrowButtonHoverBorderColor?: string,
+    arrowButtonHoverBackgroundColor?: string,
     activePBColor?: string,
     inactivePBColor?: string,
     hoverPBColor?: string,
@@ -11,6 +15,10 @@ const props = withDefaults(
     increaseActiveCardSize?: boolean,
   }>(),
   {
+    arrowButtonColor: "white",
+    arrowButtonBorderColor: "white",
+    arrowButtonHoverBorderColor: "#0D9488",
+    arrowButtonHoverBackgroundColor: "#134E4A",
     withNavigation: true,
     withPagination: true,
     activePBColor: "white",
@@ -28,6 +36,10 @@ const {
   inactivePBColor,
   hoverPBColor,
   increaseActiveCardSize,
+  arrowButtonColor,
+  arrowButtonBorderColor,
+  arrowButtonHoverBorderColor,
+  arrowButtonHoverBackgroundColor,
 } = toRefs(props);
 
 const PBShape = computed(() => {
@@ -41,17 +53,6 @@ const inactiveSize = computed(() => {
   return increaseActiveCardSize.value ? "scale(0.87)" : "scale(1)";
 });
 
-
-onMounted(() => {
-  const parentNode = container.value.parentNode;
-  const arrowButtons = Array.from(parentNode!.querySelectorAll(".carousel__button")) as Array<HTMLButtonElement>;
-  
-  arrowButtons.forEach((child: HTMLButtonElement) => {
-    child.classList.add(..."!text-white !mx-[30px] !rounded-[20px] !transition-all !duration-100 !w-[50px] !h-[50px] hover:!border-teal-600 hover:!bg-teal-900".split(" "));
-    child.style.border = "2px solid white";
-  });
-});
-
 </script>
 
 <template>
@@ -63,10 +64,7 @@ onMounted(() => {
       v-if="props.withNavigation || props.withPagination"
     >
       <div ref="container" />
-      <navigation
-        v-if="props.withNavigation"
-        class="carousel__button"
-      />
+      <navigation v-if="props.withNavigation" />
       <pagination
         v-if="props.withPagination"
       />
@@ -75,6 +73,22 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
+.carousel__prev, .carousel__next {
+  margin-right: 30px;
+  margin-left: 30px;
+  border-radius: 20px;
+  transition: all .1s;
+  width: 50px;
+  height: 50px;
+  color: v-bind("arrowButtonColor");
+  border: 2px solid v-bind("arrowButtonBorderColor");
+}
+
+.carousel__prev:hover, .carousel__next:hover {
+  border-color: v-bind("arrowButtonHoverBorderColor");
+  background-color: v-bind("arrowButtonHoverBackgroundColor");
+}
+
 .carousel__pagination-button:after {
   background-color: v-bind("inactivePBColor");
   border-radius: v-bind("PBShape.radius");
