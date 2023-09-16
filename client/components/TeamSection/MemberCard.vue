@@ -8,7 +8,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div class="mx-auto flex-[0_0_33.3%] max-w-[33.3%] relative w-full px-[15px]">
+  <div class="mx-auto min-[768px]:flex-[0_0_33.3%] min-[768px]:max-w-[33.3%] min-[576px]:flex-[0_0_50%] min-[576px]:max-w-[50%] relative w-full px-[15px]">
     <div class="flex flex-col bg-teal-900 rounded-[10px] overflow-hidden mt-[45px]">
       <div class="w-full">
         <img
