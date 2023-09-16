@@ -53,10 +53,7 @@ const carouselItems: Ref<Array<ICarouselItem>> = ref([
       <SliderSection :items="carouselItems" />
       <!-- end slider section -->
     </div>
-
-
     <!-- service section -->
-
     <section class="service_section layout_padding">
       <div class="container">
         <div class="heading_container heading_center ">
