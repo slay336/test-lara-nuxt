@@ -6,10 +6,12 @@ export default defineNuxtConfig({
   modules: [
     "@pinia/nuxt",
     'vue3-carousel-nuxt',
+    'dayjs-nuxt',
   ],
   css: [
     '@fortawesome/fontawesome-svg-core/styles.css',
     '~/assets/css/main.css',
+    '~/assets/css/styles.scss',
   ],
   runtimeConfig: {
     public: {
