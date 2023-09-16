@@ -2,6 +2,7 @@
 import HeaderSection from "~/components/HeaderSection";
 import SliderSection from "~/components/SliderSection";
 import ServiceSection from "~/components/ServiceSection";
+import AboutSection from "~/components/AboutSection";
 
 import { ICarouselItem, IServiceCarouselItem } from "~/stores/carousel/types";
 
@@ -93,39 +94,13 @@ const serviceCarouselItems: Ref<Array<IServiceCarouselItem>> = ref([
       <SliderSection :items="carouselItems" />
       <!-- end slider section -->
     </div>
+    
     <!-- service section -->
     <ServiceSection :items="serviceCarouselItems" />
     <!-- service section ends -->
 
     <!-- about section -->
-
-    <section class="about_section">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-5 offset-md-1">
-            <div class="detail-box pr-md-2">
-              <div class="heading_container">
-                <h2 class="">
-                  About Us
-                </h2>
-              </div>
-              <p class="detail_p_mt">
-                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, orThere are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, orThere are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or
-              </p>
-              <a href="about.html" class="">
-                Read More
-              </a>
-            </div>
-          </div>
-          <div class="col-md-6 px-0">
-            <div class="img-box ">
-              <img src="images/about-img.jpg" class="box_img" alt="about img">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    <AboutSection />
     <!-- about section ends -->
 
     <!-- team section -->
