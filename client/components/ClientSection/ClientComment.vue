@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import Icon from "~/components/Icon";
-
 import { IClientComment } from "~/stores/client_comment/types";
 
 const props = defineProps<{
