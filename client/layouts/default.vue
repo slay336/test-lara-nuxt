@@ -1,9 +1,24 @@
+<script setup lang="ts">
+import HeroArea from "~/components/HeroArea";
+import InfoSection from "~/components/InfoSection";
+import FooterSection from "~/components/FooterSection";
+
+</script>
+
 <template>
-  <div class="min-h-screen bg-slate-100 relative">
-    <AppHeader />
-    <div class="px-10 py-4">
-      <slot />
-    </div>
-    <AppFooter />
+  <div>
+    <!-- hero area -->
+    <HeroArea />
+    <!-- hero area ends -->
+    
+    <slot />
+    
+    <!-- info section -->
+    <InfoSection />
+    <!-- end info_section -->
+
+    <!-- footer section -->
+    <FooterSection />
+    <!-- end footer section -->
   </div>
 </template>

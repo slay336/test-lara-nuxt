@@ -8,7 +8,7 @@ import NavBar from '~/components/NavBar';
     <div class="px-[25px]">
       <nav class="p-0 flex flex-row flex-nowrap justify-start relative items-center">
         <a
-          class="text-white font-size font-bold text-2xl inline-block py-[0.3125rem] mr-[1rem] whitespace-nowrap"
+          class="text-white font-size font-bold text-2xl inline-block py-[0.3125rem] mr-[1rem] whitespace-nowrap hover:text-teal-600 transition-all duration-300"
           href="index.html"
         >
           Finter

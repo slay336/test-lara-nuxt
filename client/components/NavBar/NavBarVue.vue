@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref, Ref } from "vue";
 
-import Link from "./Link.vue";
 import Icon from "~/components/Icon";
 
 const navigationDisabled: Ref<boolean> = ref(false);
@@ -31,41 +30,84 @@ const searchDisabled: Ref<boolean> = ref(false);
   >
     <ul class="ml-auto flex-row flex pl-0 my-0 items-center">
       <li>
-        <Link href="index.html">Home</Link>
-      </li>
-      <li>
-        <Link href="about.html">About</Link>
-      </li>
-      <li>
-        <Link href="service.html">Services</Link>
-      </li>
-      <li>
-        <Link href="team.html">Team</Link>
-      </li>
-      <li>
-        <Link href="contact.html">Contact Us</Link>
-      </li>
-      <li>
-        <Link class="flex items-center gap-2 group" href="#">
-          <Icon icon="fa fa-user" class="group-hover:!text-teal-600 transition-all duration-300" :with-background="false" />
-          <span>Login</span>
-        </Link>
-      </li>
-      <form class="flex flex-row flex-wrap items-center justify-center">
-        <button
-          class="w-[35px] h-[35px] p-0 border-none text-white outline-none shadow-none group"
-          :class="{
-            'cursor-pointer': searchDisabled,
-          }"
-          type="submit"
+        <NuxtLink
+          :to="{ name: 'index' }"
+          class="py-[5px] px-[30px] hover:!text-teal-600 text-white text-center uppercase rounded-[5px] text-[15px] transition-all duration-300 block no-underline"
         >
-          <Icon
-            icon="fa fa-search"
-            class="group-hover:!text-teal-600 transition-all duration-300"
-            :with-background="false"
-          />
-        </button>
-      </form>
+          Home
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink
+          :to="{ name: 'about' }"
+          class="py-[5px] px-[30px] hover:!text-teal-600 text-white text-center uppercase rounded-[5px] text-[15px] transition-all duration-300 block no-underline"
+        >
+          About
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink
+          :to="{ name: 'service' }"
+          class="py-[5px] px-[30px] hover:!text-teal-600 text-white text-center uppercase rounded-[5px] text-[15px] transition-all duration-300 block no-underline"
+        >
+          Services
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink
+          :to="{ name: 'team' }"
+          class="py-[5px] px-[30px] hover:!text-teal-600 text-white text-center uppercase rounded-[5px] text-[15px] transition-all duration-300 block no-underline"
+        >
+          Team
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink
+          :to="{ name: 'contact' }"
+          class="py-[5px] px-[30px] hover:!text-teal-600 text-white text-center uppercase rounded-[5px] text-[15px] transition-all duration-300 block no-underline"
+        >
+          Contact Us
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink
+          class="flex items-center gap-2 group"
+          :to="{ name: 'sign_in' }"
+        >
+          <div class="flex items-center pl-[30px] pr-[10px]">
+            <Icon icon="fa fa-user" class="group-hover:!text-teal-600 transition-all duration-300" :with-background="false" />
+            <span class="p-[5px] group-hover:!text-teal-600 text-white text-center uppercase rounded-[5px] text-[15px] transition-all duration-300 block no-underline">
+              Sign in
+            </span>
+          </div>
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink
+          class="flex items-center gap-2 group"
+          :to="{ name: 'sign_up' }"
+        >
+          <div class="flex items-center px-[10px]">
+            <Icon icon="fa fa-user-plus" class="group-hover:!text-teal-600 transition-all duration-300" :with-background="false" />
+            <span class="p-[5px] group-hover:!text-teal-600 text-white text-center uppercase rounded-[5px] text-[15px] transition-all duration-300 block no-underline">
+              Sign up
+            </span>
+          </div>
+        </NuxtLink>
+      </li>
+      <button
+        class="w-[35px] h-[35px] p-0 border-none text-white outline-none shadow-none group"
+        :class="{
+          'cursor-pointer': searchDisabled,
+        }"
+        type="submit"
+      >
+        <Icon
+          icon="fa fa-search"
+          class="group-hover:!text-teal-600 transition-all duration-300"
+          :with-background="false"
+        />
+      </button>
     </ul>
   </div>
 </template>
