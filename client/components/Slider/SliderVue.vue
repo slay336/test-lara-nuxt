@@ -108,11 +108,15 @@ const inactiveSize = computed(() => {
 
 .carousel__slide {
   transform: v-bind("inactiveSize");
+}
+
+.carousel__slide--prev, .carousel__slide--next {
+  transform: v-bind("inactiveSize");
   transition: all;
   transition-duration: .3s;
 }
 
-.carousel__slide--active {
+.carousel__slide--active  {
   transform: scale(1);
 }
 </style>
