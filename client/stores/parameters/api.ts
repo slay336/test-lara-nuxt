@@ -2,6 +2,8 @@ import { defineStore } from "pinia";
 import { IParameters } from "./types";
 
 export const useParameterStore = defineStore('parameter', () => {
+  const config = useRuntimeConfig();
+
   const parameters: Ref<IParameters> = ref({
     brand: "",
     location: "",
@@ -13,10 +15,16 @@ export const useParameterStore = defineStore('parameter', () => {
     instagram: "",
   });
 
+  const hasSocial: Ref<boolean> = computed(() => {
+    return !!parameters.value.facebook
+      || !!parameters.value.twitter
+      || !!parameters.value.linkedin
+      || !!parameters.value.instagram;
+  });
+
   async function getParameters () {
-    console.log(process.env.API_URL)
-    const res = await useFetch("/api/parameter", { baseURL: process.env.API_URL });
-    
+    const { data } = await useFetch("/api/parameter", { baseURL: config.public.API_URL });
+
     ({
       brand: parameters.value.brand,
       location: parameters.value.location,
@@ -26,11 +34,12 @@ export const useParameterStore = defineStore('parameter', () => {
       twitter: parameters.value.twitter,
       linkedin: parameters.value.linkedin,
       instagram: parameters.value.instagram,
-    } = res.data as unknown as IParameters);
+    } = data.value as unknown as IParameters);
   }
 
   return {
     parameters,
     getParameters,
+    hasSocial,
   }
 });

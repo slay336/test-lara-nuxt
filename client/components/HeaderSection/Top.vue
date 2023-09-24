@@ -27,7 +27,7 @@ const parameterStore = useParameterStore();
         >
           <Icon class="mr-2 hover:bg-teal-600" icon="fa fa-phone" />
           <span>
-            Call : +01 123455678990
+            {{ parameterStore.parameters.phone }}
           </span>
         </a>
         <a
@@ -36,21 +36,36 @@ const parameterStore = useParameterStore();
         >
           <Icon class="mr-2 hover:bg-teal-600" icon="fa fa-envelope" />
           <span>
-            demo@gmail.com
+            {{ parameterStore.parameters.email }}
           </span>
         </a>
       </div>
-      <div class="flex justify-end min-w-[200px]">
-        <a href="">
+      <div
+        v-if="parameterStore.hasSocial"
+        class="flex justify-end min-w-[200px]"
+      >
+        <a 
+          v-if="parameterStore.parameters.facebook"
+          :href="parameterStore.parameters.facebook"
+        >
           <Icon class="mr-1 hover:bg-teal-600" icon="fa-brands fa-facebook" />
         </a>
-        <a href="">
+        <a
+          v-if="parameterStore.parameters.twitter"
+          :href="parameterStore.parameters.twitter"
+        >
           <Icon class="mr-1 hover:bg-teal-600" icon="fa-brands fa-twitter" />
         </a>
-        <a href="">
+        <a
+          v-if="parameterStore.parameters.linkedin"
+          :href="parameterStore.parameters.linkedin"
+        >
           <Icon class="mr-1 hover:bg-teal-600" icon="fa-brands fa-linkedin" />
         </a>
-        <a href="">
+        <a
+          v-if="parameterStore.parameters.instagram"
+          :href="parameterStore.parameters.instagram"
+        >
           <Icon class="mr-1 hover:bg-teal-600" icon="fa-brands fa-instagram" />
         </a>
       </div>

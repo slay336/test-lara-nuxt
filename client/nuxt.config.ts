@@ -13,6 +13,11 @@ export default defineNuxtConfig({
     '~/assets/css/main.css',
     '~/assets/css/styles.scss',
   ],
+  runtimeConfig: {
+    public: {
+      API_URL: process.env.API_URL,
+    },
+  },
   postcss: {
     plugins: {
       tailwindcss: {},

@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import NavBar from '~/components/NavBar';
+import NavBar from "~/components/NavBar";
+
+import { useParameterStore } from "~/stores/parameters/api";
+const parameterStore = useParameterStore();
 
 </script>
 
@@ -11,7 +14,7 @@ import NavBar from '~/components/NavBar';
           class="text-white font-size font-bold text-2xl inline-block py-[0.3125rem] mr-[1rem] whitespace-nowrap hover:text-teal-600 transition-all duration-300"
           href="index.html"
         >
-          Finter
+          {{ parameterStore.parameters.brand }}
         </a>
         <NavBar />
       </nav>

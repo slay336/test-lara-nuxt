@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { useParameterStore } from "~/stores/parameters/api";
+
+const parameterStore = useParameterStore();
 
 </script>
 
@@ -10,7 +13,7 @@
           class="text-white font-bold text-[24px] inline-block py-[0.3125rem] mr-[1rem] whitespace-nowrap"
           href="index.html"
         >
-          Finter
+          {{ parameterStore.parameters.brand }}
         </a>
       </div>
       <div class="min-[768px]:flex-[0_0_41.7%] min-[768px]:max-w-[41.7%] relative w-full px-[15px]">
@@ -26,7 +29,7 @@
               />
             </ClientOnly>
             <span>
-              Location
+              {{ parameterStore.parameters.location }}
             </span>
           </a>
           <a
@@ -40,42 +43,46 @@
               />
             </ClientOnly>
             <span>
-              +01 1234567890
+              {{ parameterStore.parameters.phone }}
             </span>
           </a>
         </div>
       </div>
-      <div class="min-[768px]:flex-[0_0_33.3%] min-[768px]:max-w-[33.3%] relative w-full px-[15px]">
+      <div
+        v-if="parameterStore.hasSocial"
+        class="min-[768px]:flex-[0_0_33.3%] min-[768px]:max-w-[33.3%] relative w-full px-[15px]"
+      >
         <div class="flex justify-end">
           <a
-            href=""
+            v-if="parameterStore.parameters.facebook"
+            :href="parameterStore.parameters.facebook"
             class="flex justify-center items-center w-[45px] h-[45px] rounded-[5px] text-white mr-[5px] text-[24px] no-underline bg-transparent"
           >
             <ClientOnly>
               <font-awesome-icon icon="fa-brands fa-facebook" />
             </ClientOnly>
-              
           </a>
           <a
-            href=""
+            v-if="parameterStore.parameters.twitter"
+            :href="parameterStore.parameters.twitter"
             class="flex justify-center items-center w-[45px] h-[45px] rounded-[5px] text-white mr-[5px] text-[24px] no-underline bg-transparent"
           >
             <ClientOnly>
               <font-awesome-icon icon="fa-brands fa-twitter" />
             </ClientOnly>
-              
           </a>
           <a
-            href=""
+            v-if="parameterStore.parameters.linkedin"
+            :href="parameterStore.parameters.linkedin"
             class="flex justify-center items-center w-[45px] h-[45px] rounded-[5px] text-white mr-[5px] text-[24px] no-underline bg-transparent"
           >
             <ClientOnly>
               <font-awesome-icon icon="fa-brands fa-linkedin" />
             </ClientOnly>
-              
           </a>
           <a
-            href=""
+            v-if="parameterStore.parameters.instagram"
+            :href="parameterStore.parameters.instagram"
             class="flex justify-center items-center w-[45px] h-[45px] rounded-[5px] text-white mr-[5px] text-[24px] no-underline bg-transparent"
           >
             <ClientOnly>
