@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import Icon from "~/components/Icon";
 
+import { useParameterStore } from "~/stores/parameters/api";
+
+const parameterStore = useParameterStore();
+
 </script>
 
 <template>
@@ -14,7 +18,7 @@ import Icon from "~/components/Icon";
         >
           <Icon class="mr-2 hover:bg-teal-600" icon="fa fa-map-marker" />
           <span>
-            Location
+            {{ parameterStore.parameters.location }}
           </span>
         </a>
         <a

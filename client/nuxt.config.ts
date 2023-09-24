@@ -13,11 +13,6 @@ export default defineNuxtConfig({
     '~/assets/css/main.css',
     '~/assets/css/styles.scss',
   ],
-  runtimeConfig: {
-    public: {
-      BASE_URL: "http://localhost:3000",
-    },
-  },
   postcss: {
     plugins: {
       tailwindcss: {},

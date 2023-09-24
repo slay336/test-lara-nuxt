@@ -14,7 +14,8 @@ export const useParameterStore = defineStore('parameter', () => {
   });
 
   async function getParameters () {
-    const res = await useFetch("/api/parameter");
+    console.log(process.env.API_URL)
+    const res = await useFetch("/api/parameter", { baseURL: process.env.API_URL });
     
     ({
       brand: parameters.value.brand,
@@ -29,6 +30,7 @@ export const useParameterStore = defineStore('parameter', () => {
   }
 
   return {
+    parameters,
     getParameters,
   }
 });
