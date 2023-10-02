@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useParameterStore } from "~/stores/parameters/api";
+import { useParameterStore } from "~/stores/parameters/store";
 
 const parameterStore = useParameterStore();
 

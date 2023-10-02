@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Icon from "~/components/Icon";
 
-import { useParameterStore } from "~/stores/parameters/api";
+import { useParameterStore } from "~/stores/parameters/store";
 
 const parameterStore = useParameterStore();
 

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import NavBar from "~/components/NavBar";
 
-import { useParameterStore } from "~/stores/parameters/api";
+import { useParameterStore } from "~/stores/parameters/store";
 const parameterStore = useParameterStore();
 
 </script>

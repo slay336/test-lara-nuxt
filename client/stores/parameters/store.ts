@@ -1,5 +1,6 @@
 import { defineStore } from "pinia";
 import { IParameters } from "./types";
+import { useCustomFetch } from "~/custom_fetch";
 
 export const useParameterStore = defineStore('parameter', () => {
   const config = useRuntimeConfig();
@@ -23,7 +24,7 @@ export const useParameterStore = defineStore('parameter', () => {
   });
 
   async function getParameters () {
-    const { data } = await useFetch("/api/parameter", { baseURL: config.public.API_URL });
+    const { data } = await useCustomFetch("/api/parameter", { baseURL: config.public.API_URL });
 
     ({
       brand: parameters.value.brand,
