@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import HeroArea from "~/components/HeroArea";
-import InfoSection from "~/components/InfoSection";
-import FooterSection from "~/components/FooterSection";
 import { useParameterStore } from "~/stores/parameters/store";
 
 const parameterStore = useParameterStore();
